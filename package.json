@@ -3,14 +3,14 @@
     "version": "1.0.0",
     "root": "afc163",
     "description": "",
-    "homepage": "",
+    "homepage": "https://github.com/afc163/word-color",
     "author": "",
     "repository": {
         "type": "git",
-        "url": ""
+        "url": "https://github.com/afc163/word-color"
     },
     "bugs": {
-        "url": ""
+        "url": "https://github.com/afc163/word-color/issues"
     },
     "license": "MIT",
     "dependencies": {
