@@ -3,6 +3,7 @@
 ---
 
 <span class="colorful">jquery</span>
+<span class="colorful">  jquery-easing  </span>
 <span class="colorful">jquery-ui</span>
 
 <span class="colorful">base</span>
