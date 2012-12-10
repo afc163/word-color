@@ -29,7 +29,7 @@ define("afc163/word-color/1.0.0/word-color-debug", [], function(require, exports
     }
 
     function getAHashNum(char) {
-        return parseInt((char.charCodeAt() << MAGIC_NUMBER) % 242);
+        return parseInt((char.charCodeAt() << MAGIC_NUMBER) % COLOR_LIMITE[1]);
     }
 
     module.exports = wordColor;
