@@ -6,3 +6,6 @@ debug:
 
 server:
 	liquidluck server -s $(HOME)/.liquidluck-themes/arale2/settings.yml
+
+publish:
+	ghp-import _site
