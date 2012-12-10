@@ -1,0 +1,22 @@
+{
+    "name": "word-color",
+    "version": "1.0.0",
+    "root": "afc163",
+    "description": "",
+    "homepage": "https://github.com/afc163/word-color",
+    "author": "",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/afc163/word-color"
+    },
+    "bugs": {
+        "url": "https://github.com/afc163/word-color/issues"
+    },
+    "license": "MIT",
+    "dependencies": {
+    },
+    "tests": ["word-color"],
+    "output": {
+        "word-color.js": "."
+    }
+}
