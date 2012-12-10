@@ -1,4 +1,4 @@
-define("afc163/word-color/1.0.0/word-color-debug", [], function(require, exports, module) {
+define(function(require, exports, module) {
 
     var MAGIC_NUMBER = 5;
 
