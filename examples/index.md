@@ -39,6 +39,16 @@
 <span class="colorful">aralex</span>
 <span class="colorful">are</span>
 
+<span class="colorful">event</span>
+<span class="colorful">even</span>
+<span class="colorful">evernote</span>
+
+<span class="colorful">red</span>
+<span class="colorful">read</span>
+<span class="colorful">reader</span>
+<span class="colorful">readbility</span>
+<span class="colorful">record</span>
+
 ````javascript
 seajs.use(['$', 'word-color'], function($, wordColor){
 

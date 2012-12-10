@@ -2,6 +2,8 @@ define(function(require, exports, module) {
 
     var MAGIC_NUMBER = 5;
 
+    var COLOR_LIMITE = [60, 242];
+
     var wordColor = function(word) {
         
         word = word.trim();
@@ -10,7 +12,12 @@ define(function(require, exports, module) {
         for (var i=0; i<word.length; i++) {
             var level = parseInt(i/rgb.length);
             rgb[i%3] += parseInt(getAHashNum(word[i]) / getRatio(level));
-            console.log(rgb);
+            
+            if (rgb[i%3] > COLOR_LIMITE[1]) {           // avoid too light
+                rgb[i%3] = COLOR_LIMITE[1];
+            } else if (rgb[i%3] < COLOR_LIMITE[0]) {    // avoid too dark
+                rgb[i%3] = COLOR_LIMITE[0];
+            }
         }
 
         return 'rgb(' + rgb.join(',') + ')';

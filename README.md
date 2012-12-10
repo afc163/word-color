@@ -2,11 +2,11 @@
 
 ---
 
-// description
+Color your words!
 
----
+## Usage
 
-## 使用说明
+```
+wordColor('words');     // rgb()
+```
 
-
-## API
