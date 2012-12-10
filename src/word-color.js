@@ -29,7 +29,7 @@ define(function(require, exports, module) {
     }
 
     function getAHashNum(char) {
-        return parseInt((char.charCodeAt() << MAGIC_NUMBER) % 242);
+        return parseInt((char.charCodeAt() << MAGIC_NUMBER) % COLOR_LIMITE[1]);
     }
 
     module.exports = wordColor;
