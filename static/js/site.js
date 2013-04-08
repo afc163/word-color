@@ -1,8 +1,8 @@
-seajs.use(['jquery'], function($) {
+seajs.use(['$'], function($, Popup) {
   $(function(){
     $('h4 em, h3 em, h3 code, h4 code').parent().addClass('doc-api')
     // 给 iframe 加链接
-    $('.ff-iframe').each(function(i, item) {
+    $('.nico-iframe').each(function(i, item) {
       var src = $(item).find('iframe').attr('src')
       var html = '<a class="new-window" target="_blank" href="' + src + '">新窗口打开</a>'
       $(item).append(html)
@@ -27,25 +27,60 @@ seajs.use(['jquery'], function($) {
     }
     return false
   });
-})
 
-// iOS scaling bug fix
-// Rewritten version
-// By @mathias, @cheeaun and @jdalton
-// Source url: https://gist.github.com/901295
-;(function(doc) {
-  var addEvent = 'addEventListener',
-      type = 'gesturestart',
-      qsa = 'querySelectorAll',
-      scales = [1, 1],
-      meta = qsa in doc ? doc[qsa]('meta[name=viewport]') : [];
-  function fix() {
-    meta.content = 'width=device-width,minimum-scale=' + scales[0] + ',maximum-scale=' + scales[1];
-    doc.removeEventListener(type, fix, true);
-  }
-  if ((meta = meta[meta.length - 1]) && addEvent in doc) {
-    fix();
-    scales = [0.25, 1.6];
-    doc[addEvent](type, fix, true);
-  }
-})(document);
+  // google analytics
+  var project = $('#sidebar-wrapper h1 > a').text();
+  $('#footer-wrapper a').click(function() {
+    _gaq.push(['_trackEvent', 'Link', 'Footer', $(this).text()]);
+  });
+  $('.source').click(function() {
+    _gaq.push(['_trackEvent', 'Link', 'Button', project]);
+  });
+  $('a[href^="https://travis-ci.org/aralejs/"]').click(function() {
+    _gaq.push(['_trackEvent', 'Link', 'Travis', project]);
+  });
+  $('.test-link').click(function() {
+    _gaq.push(['_trackEvent', 'Link', 'Test', project]);
+  });
+  $('.issue-link').click(function() {
+    _gaq.push(['_trackEvent', 'Link', 'Issue', project]);
+  });
+});
+
+(function() {
+    var temp = document.domain.split('.');
+    if (!isNaN(temp[temp.length - 1])) {
+        return;
+    }
+    seajs.use(['$', 'http://static.alipayobjects.com/arale/popup/0.9.11/popup'], function($, Popup) {
+      // spm install message
+      var root = $('#sidebar-wrapper h1 sup a').html();
+      if (root && Popup) {
+        var name = $('#sidebar-wrapper h1 > a').html().toLowerCase();
+        var version = $('#sidebar-wrapper .version a').html();
+        new Popup({
+          trigger: '#sidebar-wrapper h1 > a',
+          template: '<div class="popup-install">spm install '
+              +root+'.'+name+'@'+version+'</div>',
+          align: {
+              baseXY: [0, '100%+5']
+          }
+        });
+      }
+
+      // output card
+      if ($('#module-output')[0] && Popup) {
+          new Popup({
+            trigger: '#module-output li a',
+            element: '#output-card',
+            effect: 'fade',
+            beforeShow: function() {
+                var file = this.activeTrigger.data('file');
+                file = file.replace('./', '').replace('.js', '');
+                this.element.find('#output-file').html(file)
+                                                 .attr('href', this.activeTrigger.attr('href'));
+            }
+          });
+      }
+    });
+})();

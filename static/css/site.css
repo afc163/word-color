@@ -5,10 +5,33 @@
     src: local("Marcellus"), local("Marcellus-Regular"), url("marcellus.woff") format("woff");
 }
 
+/* alipay iconfont */
+@font-face {  
+    font-family: "rei";
+    src: url("https://i.alipayobjects.com/common/fonts/rei.eot?20130123"); /* IE9 */
+    src: url("https://i.alipayobjects.com/common/fonts/rei.eot?20130123#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("https://i.alipayobjects.com/common/fonts/rei.woff?20130123") format("woff"), /* chrome 6+、firefox 3.6+、Safari5.1+、Opera 11+ */
+    url("https://i.alipayobjects.com/common/fonts/rei.ttf?20130123")  format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    url("https://i.alipayobjects.com/common/fonts/rei.svg?20130123#rei") format("svg"); /* iOS 4.1- */
+}
+.iconfont {
+    font-family:"rei";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: #4d4d4d;
+    cursor: default;
+    -webkit-font-smoothing: antialiased;
+}
+
 body {
     background-color: #F2F0E9;
-    background-image: url(bg.gif);    
+    background-image: url(bg.gif);
     text-rendering: optimizelegibility;
+}
+
+pre, code, tt {
+    font-family: Consolas,"Liberation Mono",Courier,monospace;
 }
 
 #body-wrapper {
@@ -35,6 +58,7 @@ body {
     font-size: 14px;
     width: 220px;
     padding-top: 8px;
+    z-index: 1;
 }
 #content-wrapper {
     float: right;
@@ -49,24 +73,35 @@ body {
     font-size: 12px;
 }
 #sidebar-wrapper .source, .source-button {
-    display: inline-block;;
-    background-color: #5784bf;
-    background-image: -webkit-linear-gradient(#669be1, #5784bf);
-    box-shadow: 0 -4px rgba(0, 0, 0, 0.1) inset;
-    font-size: 16px;
-    font-family: "Trebuchet MS", sans-serif;
-    padding: 8px 16px 12px;
-    border-radius: 6px;
+    background-color: #276195;
+    background-image: linear-gradient(#3C88CC, #276195);
+    background-repeat: repeat-x;
+    border: 0 none;
+    border-radius: 0.25em 0.25em 0.25em 0.25em;
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1), 0 -4px 0 0 rgba(0, 0, 0, 0.2) inset;
     color: #fff;
-    cursor: pointer;
-    font-weight: bold;
-    text-decoration: none;
+    display: inline-block;
+    font-family: "Trebuchet MS",sans-serif;
+    font-size: 16px;
+    height: 40px;
+    line-height: 36px;
+    min-width: 100px;
+    padding: 0 20px;
     text-align: center;
-    text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    transition: all 0.25s linear 0s;
+    opacity: 0.92;
 }
 #sidebar-wrapper .source:hover {
     color: #fff;
-    box-shadow: 0 -4px rgba(0, 0, 0, 0.1) inset, 0 0 100px rgba(255,255,255, 0.2) inset;
+    opacity: 1;
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1), 0 -4px 0 0 rgba(0, 0, 0, 0.2) inset, 0 12px 24px 2px #3089D8 inset;
+}
+#sidebar-wrapper .source:active {
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1), 0 -4px 0 0 rgba(0, 0, 0, 0.2) inset, 0 12px 24px 2px #3089D8 inset;
+    top: 2px;
+    position: relative;
 }
 #sidebar-wrapper .package-root {
     position: relative;
@@ -79,7 +114,6 @@ body {
 }
 #sidebar-wrapper .package-root a:hover {
     color: rgba(0, 0, 0, 0.33);    
-
 }
 #navigation {
     list-style-type: none;
@@ -147,12 +181,9 @@ body {
 #content li {
     line-height: 1.6;
 }
-#content a {
+.hentry a {
     color: #55A4F2;
     text-decoration: none;
-}
-#content a:hover {
-    text-decoration: underline;
 }
 #content h2 {
     margin-top: 40px;
@@ -188,6 +219,7 @@ body {
     margin-right: 3px;
 }
 #content pre code, #content .highlight code {
+    color: #5D6A6A;
     background-color: transparent;
     margin: auto;
     padding: 0;
@@ -236,17 +268,22 @@ body {
     background: transparent;
     font-style: italic;
 }
-#content .ff-iframe {
+#content .nico-iframe {
     position: relative;
 }
-#content .ff-iframe iframe {
+#content .nico-iframe iframe {
     width: 100%;
 }
-#content .ff-iframe .new-window {
+#content .nico-iframe .new-window {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 30px;
+    right: -40px;
     font-size: 12px;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
 }
 #content .highlight {
     background-color: transparent;
@@ -278,6 +315,52 @@ body {
     padding-left: 20px;
 }
 
+#module-output {
+    margin: 10px 0 0;
+    padding: 0;
+    overflow: hidden;
+}
+#module-output li {
+    list-style: none;
+    float: left;
+    margin: 0 1px 0 0;
+    line-height: 1;
+}
+#module-output a {
+    font-size: 14px;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.2);
+}
+#module-output a:hover {
+    color: rgba(0, 0, 0, 0.35);
+}
+#output-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 6px;
+    color: #888;
+    position: absolute;
+    display: none;
+    width: 200px;
+}
+#output-card h3,
+#output-card p {
+    margin: 0;
+    font-size: 12px;    
+}
+#output-card h3 {
+    margin-bottom: 3px;
+}
+#module-output li.module-multiable {
+    font-size: 10px;
+    padding: 2px;
+    background: #81A6EA;
+    text-shadow: none;
+    color: #fff;
+    margin-right: 5px;
+    border-radius: 1px;
+}
+
 /* responsive */
 @media (max-width: 980px) {
     #body-wrapper, #sidebar-wrapper, #content-wrapper {
@@ -293,9 +376,9 @@ body {
     }
 }
 
-/* history tag */
-.tag {
-    background: url("tags.png") no-repeat scroll 0 50% #fff;
+/* history history-tag */
+.history-tag {
+    background: url("history-tags.png") no-repeat scroll 0 50% #fff;
     border-bottom-left-radius: 2px;
     border-top-left-radius: 2px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.2) inset;
@@ -316,30 +399,40 @@ body {
     left: 8px;
 }
 
-.tag-new {
+.history-tag-new {
     background-color: #FFEDCF;
 }
-.tag-changed {
+.history-tag-changed {
     background-color: #E9CFFF;
     background-position: -150px 50%;
 }
-.tag-fixed {
+.history-tag-fixed {
     background-color: #F0FFE1;
     background-position: -300px 50%;
 }
-.tag-html5 {
+.history-tag-html5 {
     background-color: #F8DFD8;
     background-position: -450px 50%;
 }
-.tag-improved {
+.history-tag-improved {
     background-color: #DCF6FF;
     background-position: -600px 50%;
 }
-.tag-unresolved {
+.history-tag-unresolved {
     background-color: #FFC8C8;
     background-position: -750px 50%;
 }
-.tag-developer {
+.history-tag-developer {
     background-color: #E7E7E7;
     background-position: -900px 50%;
+}
+
+.popup-install {
+    background: #fefefe;
+    font-size: 12px;
+    font-family: monospace,serif;
+    padding: 6px;
+    border: 1px solid #ddd;
+    color: #777;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2) inset;
 }

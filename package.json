@@ -1,7 +1,7 @@
 {
     "name": "word-color",
     "version": "1.0.0",
-    "root": "afc163",
+    "family": "afc163",
     "description": "",
     "homepage": "https://github.com/afc163/word-color",
     "author": "",
@@ -13,10 +13,11 @@
         "url": "https://github.com/afc163/word-color/issues"
     },
     "license": "MIT",
-    "dependencies": {
-    },
     "tests": ["word-color"],
-    "output": {
-        "word-color.js": "."
+    "spm": {
+        "output": ["word-color.js"],
+        "engines": {
+            "seajs": "seajs/seajs/2.0.0/sea"
+        }
     }
 }
