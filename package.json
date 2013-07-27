@@ -2,8 +2,8 @@
     "name": "word-color",
     "version": "1.0.0",
     "family": "afc163",
-    "description": "",
-    "homepage": "https://github.com/afc163/word-color",
+    "description": "Words colorful",
+    "homepage": "http://afc163.spmjs.org/word-color",
     "author": "",
     "repository": {
         "type": "git",
@@ -15,9 +15,12 @@
     "license": "MIT",
     "tests": ["word-color"],
     "spm": {
+        "devAlias": {
+            "expect": "gallery/expect/0.2.0/expect"
+        },
         "output": ["word-color.js"],
         "engines": {
-            "seajs": "seajs/seajs/2.0.0/sea"
+            "seajs": "seajs/seajs/2.1.1/sea"
         }
     }
 }
