@@ -4,7 +4,8 @@ node_js:
   - 0.10
 
 install:
-  - npm install mocha-browser nico
+  - npm install mocha-browser nico spm
+  - spm install
 
 before_script:
   - git clone git://github.com/aralejs/nico-arale.git _theme
