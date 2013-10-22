@@ -18,9 +18,6 @@
         "devAlias": {
             "expect": "gallery/expect/0.2.0/expect"
         },
-        "output": ["word-color.js"],
-        "engines": {
-            "seajs": "seajs/seajs/2.1.1/sea"
-        }
+        "output": ["word-color.js"]
     }
 }
