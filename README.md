@@ -19,3 +19,6 @@ var wordColor = require('afc163/word-color/1.0.0/word-color');
 wordColor('words');     // rgb(188,174,18)
 ```
 
+## Demo
+
+Colorful modules in [aralejs](http://aralejs.org).
