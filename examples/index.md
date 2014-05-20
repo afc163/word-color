@@ -51,7 +51,7 @@
 <span class="colorful">record</span>
 
 ````javascript
-seajs.use(['jquery', 'src/word-color'], function($, wordColor){
+seajs.use(['jquery', 'index'], function($, wordColor){
   $('.colorful').each(function(index, item) {
     item = $(item);
     item.css('color', wordColor(item.html()));
