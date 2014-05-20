@@ -10,12 +10,14 @@ Color your words! Similar words have Similar color.
 
 ## Usage
 
+> Use spm@3.x
+
 ```
-$ spm install afc163/word-color
+$ spm install word-color
 ```
 
 ```js
-var wordColor = require('afc163/word-color/1.0.0/word-color');
+var wordColor = require('word-color');
 
 wordColor('words');     // rgb(188,174,18)
 ```
