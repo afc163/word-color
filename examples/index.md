@@ -51,12 +51,10 @@
 <span class="colorful">record</span>
 
 ````javascript
-seajs.use(['$', 'word-color'], function($, wordColor){
-
-    $('.colorful').each(function(index, item) {
-        item = $(item);
-        item.css('color', wordColor(item.html()));
-    });
-
+seajs.use(['jquery', 'src/word-color'], function($, wordColor){
+  $('.colorful').each(function(index, item) {
+    item = $(item);
+    item.css('color', wordColor(item.html()));
+  });
 });
 ````

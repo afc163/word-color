@@ -2,6 +2,7 @@
 
 ---
 
+[![spm package](http://spmjs.io/badge/word-color)](http://spmjs.io/package/word-color)
 [![Build Status](https://secure.travis-ci.org/afc163/word-color.png)](https://travis-ci.org/afc163/word-color)
 [![Coverage Status](https://coveralls.io/repos/afc163/word-color/badge.png?branch=master)](https://coveralls.io/r/afc163/word-color)
 
