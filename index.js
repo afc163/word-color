@@ -2,7 +2,7 @@ var MAGIC_NUMBER = 5;
 
 var COLOR_LIMITE = 242;
 
-var wordColor = function (word) {
+function getRGB(word) {
 
   word = word.replace(/^\s+(.*)\s+$/g, '$1');
   var rgb = [0, 0, 0];
@@ -17,9 +17,14 @@ var wordColor = function (word) {
     }
   }
 
-  return 'rgb(' + rgb.join(',') + ')';
+  return rgb;
 
-};
+}
+
+function wordColor(word) {
+  var rgb = getRGB(word);
+  return 'rgb(' + rgb.join(',') + ')';
+}
 
 function getRatio(level) {
   return Math.pow(MAGIC_NUMBER, level);
@@ -29,4 +34,6 @@ function getAHashNum(char) {
   return parseInt((char.charCodeAt() << MAGIC_NUMBER) % COLOR_LIMITE);
 }
 
+// export pure numbers color method
+wordColor.rgb = getRGB;
 module.exports = wordColor;
