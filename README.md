@@ -1,12 +1,13 @@
 # word-color
 
----
-
 [![spm package](http://spmjs.io/badge/word-color)](http://spmjs.io/package/word-color)
-[![Build Status](https://secure.travis-ci.org/afc163/word-color.png)](https://travis-ci.org/afc163/word-color)
-[![Coverage Status](https://coveralls.io/repos/afc163/word-color/badge.png?branch=master)](https://coveralls.io/r/afc163/word-color)
+[![NPM version](https://img.shields.io/npm/v/word-color.svg?style=flat)](https://npmjs.org/package/word-color)
+[![Build Status](https://img.shields.io/travis/afc163/word-color.svg?style=flat)](https://travis-ci.org/afc163/word-color)
+[![NPM downloads](http://img.shields.io/npm/dm/word-color.svg?style=flat)](https://npmjs.org/package/word-color)
 
 Color your words! Similar words have Similar color.
+
+---
 
 ## Usage
 

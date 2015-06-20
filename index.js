@@ -1,12 +1,9 @@
 var MAGIC_NUMBER = 5;
-
 var COLOR_LIMITE = 242;
 
 function getRGB(word) {
-
   word = word.replace(/^\s+(.*)\s+$/g, '$1');
   var rgb = [0, 0, 0];
-
   for (var i = 0; i < word.length; i++) {
     var level = parseInt(i / rgb.length);
     rgb[i % 3] += parseInt(getAHashNum(word[i]) / getRatio(level));
@@ -16,9 +13,7 @@ function getRGB(word) {
       rgb[j] = 255;
     }
   }
-
   return rgb;
-
 }
 
 function wordColor(word) {
