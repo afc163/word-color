@@ -9,9 +9,9 @@ Color your words! Similar words have Similar color.
 
 ---
 
-## Usage
+## Install & Usage
 
-> Use spm@3.x
+> Use spm
 
 ```
 $ spm install word-color
